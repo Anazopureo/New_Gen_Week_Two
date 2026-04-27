@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border:1px solid black; */
+    border:1px solid black;
 
 }
 
@@ -68,6 +68,7 @@ section.card-grid{
 
 .city-card{
     padding: 10px;
+    margin:5px;
     justify-content: flex-start;
     align-items: center;
     background-color: rgb(66, 15, 196);
