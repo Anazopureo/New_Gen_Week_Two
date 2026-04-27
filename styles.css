@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border:1px solid black; */
+
+}
+
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: white;
+}
+
+header{
+    height: 700px;
+    background: linear-gradient(to right, rgba(26, 17, 17, 0.5), rgba(73, 11, 11, 0.541)), url("Ile_Ife_aerial_scape.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: black;
+    animation-name:fade-in;
+    animation-duration: 4s;
+    /* text-align: center; */
+}
+
+h1{
+    animation-name: puffup;
+    animation-duration: 2s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+header p{
+    animation-name:slide-down;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-timing-function:ease--in-out;
+    animation-fill-mode:forwards;
+}
+
+@keyframes fade-in{
+    from{opacity: 0; }
+    to{opacity: 1;}
+}
+
+@keyframes puffup{
+    from{font-size:1.5em; color: black; }
+    to{font-size: 2.5em; color: white; }
+}
+
+@keyframes slide-down{
+    from{color:white;}
+    to{color:white}
+}
+
+section.card-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    padding: 50px 20px;
+    gap: 20px;
+    background-color: rgba(73, 11, 11, 0.541);
+}
+
+
+.city-card{
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+/* rgb(0, 67, 130) */
+
+.card-grid img{
+    height: 250px ;
+    width: 250px;
+    object-fit: cover;
+    object-position: center;
+    transition: width 1s, height 1s;
+
+}
+
+.city-card img:hover{
+    width: 270px;
+    height: 270px;
+}
+
+.city-card h2{
+    transition: width 1s, height 1s, transform 2s;
+    /* transition-timing-function: ease-out; */
+}
+
+.city-card h2:hover{
+    width: 150px;
+    height: 150px;
+    /* transition: scale(1.2, 1.2); */
+}
+
+footer {
+    text-align: center;
+}
