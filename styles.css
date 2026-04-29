@@ -2,26 +2,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border:1px solid black;
+    /* border:1px solid black; */
 
+}
+:root{
+    --primarycolor: #181818;
+    /*
+        white
+        #000000 
+        #181818
+        #121212 
+    */
+    --secondarycolor: rgb(240, 239, 239);
+    /*
+        #FAFAFA
+    */
+
+    --accentcolor: #BB86FC;
+    --position: center;
 }
 
 body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: rgb(35, 3, 122);
+    background: var(--primarycolor);
 }
 
 header{
     height: 700px;
     background: linear-gradient(to right, rgba(26, 17, 17, 0.5), rgba(73, 11, 11, 0.541)), url("Ile_Ife_aerial_scape.jpg");
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
+    background-position: var(--position);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: var(--position);
     align-items: center;
     font-size: 1.5em;
-    color: black;
+    color: var(--primarycolor);
     animation-name:fade-in;
     animation-duration: 4s;
     /* text-align: center; */
@@ -37,9 +53,9 @@ h1{
 
 header p{
     animation-name:slide-down;
-    animation-duration: 2s;
-    animation-delay: 2s;
-    animation-timing-function:ease--in-out;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-timing-function:ease-in-out;
     animation-fill-mode:forwards;
 }
 
@@ -54,13 +70,13 @@ header p{
 }
 
 @keyframes slide-down{
-    from{color:white;}
+    from{color: black;}
     to{color:white}
 }
 
 section.card-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     padding: 50px 20px;
     gap: 20px;
 }
@@ -70,35 +86,57 @@ section.card-grid{
     padding: 10px;
     margin:5px;
     justify-content: flex-start;
-    align-items: center;
-    background-color: rgb(66, 15, 196);
-    color: white;
+    align-items: var(--position);
+    background-color:var(--secondarycolor);
+    color: var(--primarycolor);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    animation-name: slide-up;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay:2s;
+    
    
 }
 
+@keyframes slide-up{
+    from{top: 40px;}
+    to{top: 0px}
+}
 
-
-
-/* rgb(0, 67, 130) */
-
-.card-grid img{
+.city-card img{
     height: 250px ;
     width: 250px;
     object-fit: cover;
-    object-position: center;
-    transition: width 1s, height 1s;
+    object-position: var(--position);
+    transition: transform 1s;
+    /*
+     or
+     transition: width 1s, height 1s;
+    */
 
 }
 
 .city-card img:hover{
+    transform: scale(1.1);
+    /*
+    or
+
     width: 300px;
     height: 300px;
+     */
+}
+
+.city-card a{
+    text-decoration: none;
+    color: var(--accentcolor)
+    
 }
 
 
 footer {
-    text-align: center;
+    text-align: var(--position);
+    color: var(--secondarycolor);
 }
