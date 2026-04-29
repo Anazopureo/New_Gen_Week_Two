@@ -131,9 +131,21 @@ section.card-grid{
 
 .city-card a{
     text-decoration: none;
-    color: var(--accentcolor)
+    color: var(--secondarycolor)
     
 }
+
+.city-card button{
+    background-color: var(--accentcolor);
+    size: 105%;
+    transition: transform 1s;
+}
+
+.city-card :hover{
+    transform: scale(1.1);
+    color: purple;
+}
+
 
 
 footer {
